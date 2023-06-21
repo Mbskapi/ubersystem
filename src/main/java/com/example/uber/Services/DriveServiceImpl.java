@@ -23,20 +23,19 @@ public class DriveServiceImpl implements DriverService {
 //            throw new RuntimeException(String.format("%s Email is invalid", driverRequest.getEmailAddress()));
         //}
         Driver driver = new Driver();
-        if (driverRepository.findByEmailAddress(driverRequest.getEmailAddress()).isPresent())
+        if (driverRepository.findByEmailAddress(driverRequest.getEmailAddress()).isPresent()) {
             throw new RuntimeException("email exist");
-        else
+        } else {
             driver.setEmailAddress(driverRequest.getEmailAddress());
-        driver.setName(driverRequest.getName());
-        driver.setDriverLicense(driverRequest.getDriverLicense());
-        driver.setName(driverRequest.getName());
-        driver.setPassword(driverRequest.getPassword());
-        driver.setCar(driver.getCar());
-        Driver savedDriver = driverRepository.save(driver);
+            driver.setName(driverRequest.getName());
+            driver.setDriverLicense(driverRequest.getDriverLicense());
+            driver.setName(driverRequest.getName());
+            driver.setPassword(driverRequest.getPassword());
+            driver.setCar(driver.getCar());
+            driverRepository.save(driver);
+        }
 
-            DriverResponse driverResponse = new DriverResponse();
-            driverResponse.setMessage("signUp successfully");
-            return driverResponse;
+        return new DriverResponse("signUp successfully");
     }
 
     @Override

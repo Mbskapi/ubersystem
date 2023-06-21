@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class DriverRequest {
-     private String EmailAddress;
-     private  String Name;
-     private String Password;
-     private String DriverLicense;
+     private String emailAddress;
+     private String name;
+     private String password;
+     private String driverLicense;
 }

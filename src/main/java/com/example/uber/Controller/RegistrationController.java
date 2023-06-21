@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("signUp")
-public class RegisterationController {
+@RequestMapping("/api/v1/driver")
+public class RegistrationController {
     @Autowired
     private DriverService driverService;
 
-    @PostMapping("signUp")
+    @PostMapping("/signUp")
     public ResponseEntity<?> signUp(@RequestBody DriverRequest driverRequest){
-        return new ResponseEntity<>(driverService.signUp(driverRequest), HttpStatus.CREATED);
+        return new ResponseEntity<>(driverService.signUp(driverRequest), HttpStatus.OK);
 
     }
     @PostMapping("login")
