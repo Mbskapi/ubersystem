@@ -1,4 +1,4 @@
-#spring.config.import=file:.env.properties
+#spring.config.import=file:config.env
 #spring.data.mongodb.authentication-database=admin
 #spring.data.mongodb.database=cluster
 #spring.data.mongodb.port=27017
